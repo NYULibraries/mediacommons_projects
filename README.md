@@ -1,2 +1,2 @@
-# mediacommons_projects
-MediaCommons Projects
+# Mediacommons Projects
+MediaCommons Projects install profile
