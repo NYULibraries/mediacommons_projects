@@ -12,7 +12,7 @@
  *
  * @see system_install()
  */
-function mediacommons_projects_profile_install() {
+function mediacommons_projects_install() {
 
   $default_theme = 'mediacommons';
 
