@@ -38,6 +38,7 @@ dependencies[] = mediacommons_utilities
 dependencies[] = mediacommons_homepage_featured
 dependencies[] = mediacommons_image_styles_and_date_formats
 dependencies[] = mediacommons_movable_blocks
+dependencies[] = mediacommons_api
 
 ; for now
 dependencies[] = link
