@@ -1,16 +1,17 @@
 name = MediaCommons Install Profile
 description = Installation Profile for MediaCommons projects
 core = 7.x
+exclusive = true
 
 dependencies[] = mediacommons_apis
-
-dependencies[] = mediacommons_content_types
 dependencies[] = mediacommons_blocks
+dependencies[] = mediacommons_content_types
 dependencies[] = mediacommons_user_setup
 dependencies[] = mediacommons_user_layout
 dependencies[] = mediacommons_ds_settings
-dependencies[] = mediacommons_site_navigation
 dependencies[] = mediacommons_globalnav
 dependencies[] = mediacommons_utilities
-dependencies[] = mediacommons_homepage_featured
+
 dependencies[] = mediacommons_movable_blocks
+dependencies[] = mediacommons_homepage_featured
+
