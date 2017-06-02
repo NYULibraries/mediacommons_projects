@@ -11,7 +11,6 @@ dependencies[] = mediacommons_user_layout
 dependencies[] = mediacommons_ds_settings
 dependencies[] = mediacommons_globalnav
 dependencies[] = mediacommons_utilities
-
 dependencies[] = mediacommons_movable_blocks
 dependencies[] = mediacommons_homepage_featured
 
