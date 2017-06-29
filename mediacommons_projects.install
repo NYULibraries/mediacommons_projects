@@ -19,7 +19,6 @@ function mediacommons_projects_install() {
   $admin_theme = 'mediacommons_admin';
 
   // Enable some standard blocks.
-
   $blocks = array(
     array(
       'module' => 'system',
@@ -30,6 +29,7 @@ function mediacommons_projects_install() {
       'region' => 'content',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
       'module' => 'search',
@@ -40,6 +40,7 @@ function mediacommons_projects_install() {
       'region' => 'search',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
   	  'module' => 'mediacommons_blocks',
@@ -50,6 +51,7 @@ function mediacommons_projects_install() {
       'region' => 'footer',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     // View: Single Hub latest
     array(
@@ -62,6 +64,7 @@ function mediacommons_projects_install() {
       'pages' => '<front>',
       'visibility' => 1,
       'cache' => -1,
+      'visibility' => 0,
     ),
     // View: 6 most recent hubs
     array(
@@ -72,12 +75,11 @@ function mediacommons_projects_install() {
       'weight' => 0,
       'region' => 'homepage_bottom',
       'pages' => '<front>',
-      'visibility' => 1,
       'cache' => -1,
-      ),
-
-      // View: Recent Comments
-       array(
+      'visibility' => 1,      
+    ),
+    // View: Recent Comments
+    array(
       'module' => 'views',
       'delta' => 'mc_recent_comments-block',
       'theme' => $default_theme,
@@ -86,9 +88,10 @@ function mediacommons_projects_install() {
       'region' => 'sidebar_first',
       'pages' => '',
       'cache' => -1,
-      ),
-      // View: List of all Hubs
-       array(
+      'visibility' => 0,
+    ),
+    // View: List of all Hubs
+    array(
       'module' => 'views',
       'delta' => 'contributors_this_hub-block',
       'theme' => $default_theme,
@@ -97,9 +100,10 @@ function mediacommons_projects_install() {
       'region' => 'sidebar_first',
       'pages' => '',
       'cache' => -1,
-      ),
-      // View: Top Organizations Widget
-       array(
+      'visibility' => 0,
+    ),
+    // View: Top Organizations Widget
+    array(
       'module' => 'views',
       'delta' => 'top_organizations-block',
       'theme' => $default_theme,
@@ -107,11 +111,11 @@ function mediacommons_projects_install() {
       'weight' => 3,
       'region' => 'homepage_sidebar',
       'pages' => '<front>',
-      'visibility' => 1,
       'cache' => -1,
-      ),
-          // View: Top Tags Widget
-       array(
+      'visibility' => 1,
+    ),
+    // View: Top Tags Widget
+    array(
       'module' => 'views',
       'delta' => 'tags-block',
       'theme' => $default_theme,
@@ -119,11 +123,11 @@ function mediacommons_projects_install() {
       'weight' => 2,
       'region' => 'homepage_sidebar',
       'pages' => '<front>',
-      'visibility' => 1,
       'cache' => -1,
-      ),
+      'visibility' => 1,
+    ),
     // View: Top Tags Widget for tag page
-       array(
+    array(
       'module' => 'views',
       'delta' => 'tags-block_1',
       'theme' => $default_theme,
@@ -132,19 +136,19 @@ function mediacommons_projects_install() {
       'region' => 'sidebar_tagpages',
       'pages' => '',
       'cache' => -1,
-      ),
-
-       array(
-        'module' => 'menu',
-        'delta' => 'menu-mcglobalnav',
-        'theme' => $default_theme,
-        'status' => 1,
-        'weight' => 0,
-        'region' => 'globalnav',
-        'pages' => '',
-        'cache' => -1,
-      ),
-
+      'visibility' => 0,
+    ),
+    array(
+      'module' => 'menu',
+      'delta' => 'menu-mcglobalnav',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'globalnav',
+      'pages' => '',
+      'cache' => -1,
+      'visibility' => 0,
+    ),
     array(
       'module' => 'system',
       'delta' => 'help',
@@ -154,6 +158,7 @@ function mediacommons_projects_install() {
       'region' => 'help',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
       'module' => 'node',
@@ -164,6 +169,7 @@ function mediacommons_projects_install() {
       'region' => 'dashboard_main',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
       'module' => 'system',
@@ -174,6 +180,7 @@ function mediacommons_projects_install() {
       'region' => 'content',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
       'module' => 'system',
@@ -184,6 +191,7 @@ function mediacommons_projects_install() {
       'region' => 'help',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
       'module' => 'user',
@@ -194,6 +202,7 @@ function mediacommons_projects_install() {
       'region' => 'content',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
       'module' => 'user',
@@ -204,6 +213,7 @@ function mediacommons_projects_install() {
       'region' => 'dashboard_sidebar',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
     array(
       'module' => 'search',
@@ -214,25 +224,27 @@ function mediacommons_projects_install() {
       'region' => 'dashboard_sidebar',
       'pages' => '',
       'cache' => -1,
+      'visibility' => 0,
     ),
   );
 
-  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  $fields = array(
+    'module', 
+    'delta', 
+    'theme', 
+    'status', 
+    'weight', 
+    'region', 
+    'pages', 
+    'cache',
+    'visibility',
+  );
 
-  foreach ($blocks as $block) {
-    $query->values($block);
-  }
+  $query = db_insert('block')->fields($fields);
+
+  foreach ($blocks as $block) $query->values($block);
 
   $query->execute();
-
-  // Enable user picture support and set the default to a square thumbnail option.
-  variable_set('user_pictures', '1');
-  variable_set('user_picture_dimensions', '1024x1024');
-  variable_set('user_picture_file_size', '800');
-  variable_set('user_picture_style', 'thumbnail');
-
-  // Allow visitor account creation with administrative approval.
-  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
 
   // Create a Home link in the main menu.
   $item = array(
@@ -260,13 +272,24 @@ function mediacommons_projects_install() {
     ->condition('name', 'zen')
     ->execute();
 
-
   // Enable the mediacommons theme.
   db_update('system')
     ->fields(array('status' => 1))
     ->condition('type', 'theme')
     ->condition('name', $default_theme)
     ->execute();
+
+  // Enable user picture support and set the default to a square thumbnail option.
+  variable_set('user_pictures', '1');
+  
+  variable_set('user_picture_dimensions', '1024x1024');
+  
+  variable_set('user_picture_file_size', '800');
+  
+  variable_set('user_picture_style', 'thumbnail');
+
+  // Allow visitor account creation with administrative approval.
+  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);    
 
   variable_set('admin_theme',  $admin_theme);
 
