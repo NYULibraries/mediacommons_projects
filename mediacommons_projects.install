@@ -60,7 +60,7 @@ function mediacommons_projects_install() {
       'weight' => 0,
       'region' => 'homepage_top',
       'pages' => '<front>',
-      'visibility' => BLOCK_VISIBILITY_LISTED,
+      'visibility' => 1,
       'cache' => -1,
     ),
     // View: 6 most recent hubs
@@ -72,7 +72,7 @@ function mediacommons_projects_install() {
       'weight' => 0,
       'region' => 'homepage_bottom',
       'pages' => '<front>',
-      'visibility' => BLOCK_VISIBILITY_LISTED,
+      'visibility' => 1,
       'cache' => -1,
       ),
 
@@ -107,7 +107,7 @@ function mediacommons_projects_install() {
       'weight' => 3,
       'region' => 'homepage_sidebar',
       'pages' => '<front>',
-      'visibility' => BLOCK_VISIBILITY_LISTED,
+      'visibility' => 1,
       'cache' => -1,
       ),
           // View: Top Tags Widget
@@ -119,7 +119,7 @@ function mediacommons_projects_install() {
       'weight' => 2,
       'region' => 'homepage_sidebar',
       'pages' => '<front>',
-      'visibility' => BLOCK_VISIBILITY_LISTED,
+      'visibility' => 1,
       'cache' => -1,
       ),
     // View: Top Tags Widget for tag page
