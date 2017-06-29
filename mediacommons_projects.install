@@ -41,7 +41,6 @@ function mediacommons_projects_install() {
       'pages' => '',
       'cache' => -1,
     ),
-
     array(
   	  'module' => 'mediacommons_blocks',
       'delta' => 'mc_footer',
@@ -52,7 +51,6 @@ function mediacommons_projects_install() {
       'pages' => '',
       'cache' => -1,
     ),
-
     // View: Single Hub latest
     array(
       'module' => 'views',
@@ -61,7 +59,8 @@ function mediacommons_projects_install() {
       'status' => 1,
       'weight' => 0,
       'region' => 'homepage_top',
-      'pages' => '',
+      'pages' => '<front>',
+      'visibility' => BLOCK_VISIBILITY_LISTED,
       'cache' => -1,
     ),
     // View: 6 most recent hubs
@@ -72,7 +71,8 @@ function mediacommons_projects_install() {
       'status' => 1,
       'weight' => 0,
       'region' => 'homepage_bottom',
-      'pages' => '',
+      'pages' => '<front>',
+      'visibility' => BLOCK_VISIBILITY_LISTED,
       'cache' => -1,
       ),
 
@@ -87,8 +87,7 @@ function mediacommons_projects_install() {
       'pages' => '',
       'cache' => -1,
       ),
-
-        // View: List of all Hubs
+      // View: List of all Hubs
        array(
       'module' => 'views',
       'delta' => 'contributors_this_hub-block',
@@ -99,19 +98,6 @@ function mediacommons_projects_install() {
       'pages' => '',
       'cache' => -1,
       ),
-      
-      // Block: Delta 1 is twitter widget
-      //array(
-      //'module' => 'block',
-      //'delta' => '1',
-      //'theme' => $default_theme,
-      //'status' => 1,
-      //'weight' => -1,
-      //'region' => 'homepage_sidebar',
-      //'pages' => '',
-      //'cache' => -1,
-      //),
-      
       // View: Top Organizations Widget
        array(
       'module' => 'views',
@@ -120,7 +106,8 @@ function mediacommons_projects_install() {
       'status' => 1,
       'weight' => 3,
       'region' => 'homepage_sidebar',
-      'pages' => '',
+      'pages' => '<front>',
+      'visibility' => BLOCK_VISIBILITY_LISTED,
       'cache' => -1,
       ),
           // View: Top Tags Widget
@@ -131,7 +118,8 @@ function mediacommons_projects_install() {
       'status' => 1,
       'weight' => 2,
       'region' => 'homepage_sidebar',
-      'pages' => '',
+      'pages' => '<front>',
+      'visibility' => BLOCK_VISIBILITY_LISTED,
       'cache' => -1,
       ),
     // View: Top Tags Widget for tag page
