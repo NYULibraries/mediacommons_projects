@@ -64,7 +64,6 @@ function mediacommons_projects_install() {
       'pages' => '<front>',
       'visibility' => 1,
       'cache' => -1,
-      'visibility' => 0,
     ),
     // View: 6 most recent hubs
     array(
